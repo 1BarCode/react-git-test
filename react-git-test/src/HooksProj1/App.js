@@ -1,14 +1,34 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Search from "./components/Search";
+import Dropdown from "./components/Dropdown";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Search />
-      </div>
-    );
-  }
-}
+const options = [
+  {
+    label: "The Color Red",
+    value: "red",
+  },
+  {
+    label: "The Color Green",
+    value: "green",
+  },
+  {
+    label: "The Color Blue",
+    value: "blue",
+  },
+];
+
+const App = () => {
+  const [selected, setSelected] = useState(options[0]);
+
+  return (
+    <div className="App">
+      <Dropdown
+        selected={selected}
+        onSelectedChange={setSelected}
+        options={options}
+      />
+    </div>
+  );
+};
 
 export default App;
