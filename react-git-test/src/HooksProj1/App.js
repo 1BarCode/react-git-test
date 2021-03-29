@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Search from "./components/Search";
 import Dropdown from "./components/Dropdown";
+import Dropdown2 from "./components/Dropdown2";
 
-const options = [
+const menuOptions = [
   {
     label: "The Color Red",
     value: "red",
@@ -18,12 +19,12 @@ const options = [
 ];
 
 const App = () => {
-  const [selected, setSelected] = useState(options[0]);
+  const [selected, setSelected] = useState(menuOptions[0]);
   const [showDropdown, setShowDropdown] = useState(true);
 
   return (
     <div className="App">
-      <button onClick={() => setShowDropdown(!showDropdown)}>
+      {/* <button onClick={() => setShowDropdown(!showDropdown)}>
         Toggle Dropdown
       </button>
       {showDropdown ? (
@@ -32,7 +33,12 @@ const App = () => {
           onSelectedChange={setSelected}
           options={options}
         />
-      ) : null}
+      ) : null} */}
+      <Dropdown2
+        menuOptions={menuOptions}
+        selected={selected}
+        setSelected={setSelected}
+      />
     </div>
   );
 };
