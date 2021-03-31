@@ -2,6 +2,23 @@ import React, { useState, useEffect, useRef } from "react";
 
 const Dropdown2 = ({ menuOptions, selected, setSelected }) => {
   const [open, setOpen] = useState(true);
+  const refUIForm = useRef();
+
+  useEffect(() => {
+    const onBodyClick = (event) => {
+      if (refUIForm.current && refUIForm.current.contains(event.target)) {
+        return;
+      }
+
+      setOpen(false);
+    };
+
+    document.body.addEventListener("click", onBodyClick);
+
+    return () => {
+      document.body.removeEventListener("click", onBodyClick);
+    };
+  });
 
   const renderedOptions = menuOptions.map((option) => {
     if (option.value === selected.value) {
@@ -20,7 +37,7 @@ const Dropdown2 = ({ menuOptions, selected, setSelected }) => {
   });
 
   return (
-    <div className="ui form">
+    <div className="ui form" ref={refUIForm}>
       <div className="field">
         <label className="label">Select a Color</label>
         <div

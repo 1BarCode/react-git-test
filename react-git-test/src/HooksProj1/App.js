@@ -34,11 +34,17 @@ const App = () => {
           options={options}
         />
       ) : null} */}
-      <Dropdown2
-        menuOptions={menuOptions}
-        selected={selected}
-        setSelected={setSelected}
-      />
+
+      <button onClick={() => setShowDropdown(!showDropdown)}>
+        Toggle Dropdown
+      </button>
+      {showDropdown ? (
+        <Dropdown2
+          menuOptions={menuOptions}
+          selected={selected}
+          setSelected={setSelected}
+        />
+      ) : null}
     </div>
   );
 };
