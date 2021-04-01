@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Search from "./components/Search";
 import Dropdown from "./components/Dropdown";
 import Dropdown2 from "./components/Dropdown2";
+import Translate2 from "./components/Translate2";
 
 const menuOptions = [
   {
@@ -35,7 +36,7 @@ const App = () => {
         />
       ) : null} */}
 
-      <button onClick={() => setShowDropdown(!showDropdown)}>
+      {/* <button onClick={() => setShowDropdown(!showDropdown)}>
         Toggle Dropdown
       </button>
       {showDropdown ? (
@@ -44,7 +45,8 @@ const App = () => {
           selected={selected}
           setSelected={setSelected}
         />
-      ) : null}
+      ) : null} */}
+      <Translate2 />
     </div>
   );
 };
