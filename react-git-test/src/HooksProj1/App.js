@@ -4,6 +4,7 @@ import Dropdown from "./components/Dropdown";
 import Dropdown2 from "./components/Dropdown2";
 import Translate2 from "./components/Translate2";
 import Accordion from "./components/Accordion";
+import Route from "./components/Route";
 
 const menuOptions = [
   {
@@ -39,6 +40,17 @@ const App = () => {
   const [selected, setSelected] = useState(menuOptions[0]);
   const [showDropdown, setShowDropdown] = useState(true);
 
+  // Routing Components
+  // const showAccordion = () => {
+  //   if (window.location.pathname === "/") {
+  //     return <Accordion items={items} />;
+  //   }
+  // };
+  // // or
+  // const showComponent = (route, component) => {
+  //   return window.location.pathname === route ? component : null;
+  // };
+
   return (
     <div className="App">
       {/* <button onClick={() => setShowDropdown(!showDropdown)}>
@@ -63,7 +75,27 @@ const App = () => {
         />
       ) : null} */}
       {/* <Translate2 /> */}
-      <Accordion items={items} />
+
+      {/* Routing ----------- */}
+      {/* {showAccordion()} */}
+      {/* Use Route Component */}
+      <Route path="/">
+        <Accordion items={items} />
+      </Route>
+      <Route path="/list">
+        <Search />
+      </Route>
+      <Route path="/dropdown">
+        <Dropdown2
+          label="Select a Color"
+          menuOptions={menuOptions}
+          selected={selected}
+          setSelected={setSelected}
+        />
+      </Route>
+      <Route path="/translate">
+        <Translate2 />
+      </Route>
     </div>
   );
 };
