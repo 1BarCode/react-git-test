@@ -5,6 +5,7 @@ import Dropdown2 from "./components/Dropdown2";
 import Translate2 from "./components/Translate2";
 import Accordion from "./components/Accordion";
 import Route from "./components/Route";
+import Header from "./components/Header";
 
 const menuOptions = [
   {
@@ -76,6 +77,7 @@ const App = () => {
       ) : null} */}
       {/* <Translate2 /> */}
 
+      <Header />
       {/* Routing ----------- */}
       {/* {showAccordion()} */}
       {/* Use Route Component */}
