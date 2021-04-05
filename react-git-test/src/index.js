@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import App from "./HooksProj1/App";
+// import AppProj1 from "./HooksProj1/App";
+import ReduxSongApp from "./ReduxSongApp/components/ReduxSongApp";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ReduxSongApp />
   </React.StrictMode>,
   document.getElementById("root")
 );
