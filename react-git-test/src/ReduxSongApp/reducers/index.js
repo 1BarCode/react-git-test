@@ -1,3 +1,5 @@
+import { combineReducers } from "redux";
+
 // return a static list (no need to really include it in a reducer, but doing it anyways)
 
 const songsReducer = () => {
@@ -15,3 +17,8 @@ const selectedSongReducer = (selectedSong = null, action) => {
   }
   return selectedSong;
 };
+
+export default combineReducers({
+  songs: songsReducer,
+  selectedSong: selectedSongReducer,
+});

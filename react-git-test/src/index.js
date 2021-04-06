@@ -1,12 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 
 // import AppProj1 from "./HooksProj1/App";
 import ReduxSongApp from "./ReduxSongApp/components/ReduxSongApp";
+import reducers from "./ReduxSongApp/reducers";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ReduxSongApp />
+    <Provider store={createStore(reducers)}>
+      <ReduxSongApp />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
