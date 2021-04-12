@@ -5,11 +5,11 @@ import { createStore } from "redux";
 
 // import AppProj1 from "./HooksProj1/App";
 import ReduxSongApp from "./ReduxSongApp/components/ReduxSongApp";
-import reducers from "./ReduxSongApp/reducers";
+import rootReducer from "./ReduxSongApp/reducers";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={createStore(reducers)}>
+    <Provider store={createStore(rootReducer)}>
       <ReduxSongApp />
     </Provider>
   </React.StrictMode>,
