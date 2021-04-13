@@ -3,14 +3,33 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
+// HooksProj1 App
 // import AppProj1 from "./HooksProj1/App";
-import ReduxSongApp from "./ReduxSongApp/components/ReduxSongApp";
-import rootReducer from "./ReduxSongApp/reducers";
+
+// ---------------------------
+// ReduxSongApp
+// import ReduxSongApp from "./ReduxSongApp/components/ReduxSongApp";
+// import rootReducer from "./ReduxSongApp/reducers";
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Provider store={createStore(rootReducer)}>
+//       <ReduxSongApp />
+//     </Provider>
+//   </React.StrictMode>,
+//   document.getElementById("root")
+// );
+// ---------------------------
+
+// Blog App
+
+import BlogApp from "./ReduxBlogApp/components/BlogAppIndex";
+import rootReducer from "./ReduxBlogApp/reducers/rootReducer";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={createStore(rootReducer)}>
-      <ReduxSongApp />
+      <BlogApp />
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
