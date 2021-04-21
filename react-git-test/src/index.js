@@ -37,7 +37,7 @@ import { createStore } from "redux";
 
 //--------------------------
 //React Router
-import ReactRouterApp from "./ReactRouterApp/ReactRouterApp";
+import ReactRouterApp from "./ReactRouterApp/components/ReactRouterApp";
 
 ReactDOM.render(
   <React.StrictMode>
