@@ -23,14 +23,25 @@ import { createStore } from "redux";
 
 // Blog App
 
-import BlogApp from "./ReduxBlogApp/components/BlogAppIndex";
-import rootReducer from "./ReduxBlogApp/reducers/rootReducer";
+// import BlogApp from "./ReduxBlogApp/components/BlogAppIndex";
+// import rootReducer from "./ReduxBlogApp/reducers/rootReducer";
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Provider store={createStore(rootReducer)}>
+//       <BlogApp />
+//     </Provider>
+//   </React.StrictMode>,
+//   document.getElementById("root")
+// );
+
+//--------------------------
+//React Router
+import ReactRouterApp from "./ReactRouterApp/ReactRouterApp";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={createStore(rootReducer)}>
-      <BlogApp />
-    </Provider>
+    <ReactRouterApp />
   </React.StrictMode>,
   document.getElementById("root")
 );
