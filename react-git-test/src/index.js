@@ -38,10 +38,15 @@ import { createStore } from "redux";
 //--------------------------
 //React Router
 import ReactRouterApp from "./ReactRouterApp/components/ReactRouterApp";
+import rootReducer from "./ReactRouterApp/reducers/rootReducer";
+
+const reactRouterAppStore = createStore(rootReducer);
 
 ReactDOM.render(
   <React.StrictMode>
-    <ReactRouterApp />
+    <Provider store={reactRouterAppStore}>
+      <ReactRouterApp />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
