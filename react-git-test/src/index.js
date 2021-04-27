@@ -43,11 +43,11 @@ import rootReducer from "./ReactRouterApp/reducers/rootReducer";
 const reactRouterAppStore = createStore(rootReducer);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={reactRouterAppStore}>
-      <ReactRouterApp />
-    </Provider>
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <Provider store={reactRouterAppStore}>
+    <ReactRouterApp />
+  </Provider>,
+  // </React.StrictMode>,
   document.getElementById("root")
 );
 
