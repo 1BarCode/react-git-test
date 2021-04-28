@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+// import { createStore } from "redux";
 
 // HooksProj1 App
 // import AppProj1 from "./HooksProj1/App";
@@ -39,8 +39,13 @@ import { createStore } from "redux";
 //React Router
 import ReactRouterApp from "./ReactRouterApp/components/ReactRouterApp";
 import rootReducer from "./ReactRouterApp/reducers/rootReducer";
+import { createStore, applyMiddleware, compose } from "redux";
 
-const reactRouterAppStore = createStore(rootReducer);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const reactRouterAppStore = createStore(
+  rootReducer,
+  composeEnhancers(applyMiddleware())
+);
 
 ReactDOM.render(
   // <React.StrictMode>
